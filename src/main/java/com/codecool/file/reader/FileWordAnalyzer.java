@@ -42,7 +42,7 @@ public class FileWordAnalyzer {
             StringBuilder reversedWord = new StringBuilder();
 
             for (int j = originalWord.length() - 1; j >= 0; j--) {
-                reversedWord.append(originalWord.charAt(i));
+                reversedWord.append(originalWord.charAt(j));
             }
 
             if (originalWord.equals(reversedWord.toString())) {

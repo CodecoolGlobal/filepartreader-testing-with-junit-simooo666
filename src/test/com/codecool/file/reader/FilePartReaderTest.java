@@ -15,7 +15,7 @@ class FilePartReaderTest {
     @Test
     public void readAllLinesTest() throws IOException {
         filePartReader.setup("./resources/test.txt", 2, 4);
-        String result = "first line one two three second line one two three third line one two three fourth line one two three fifth line one two three";
+        String result = "first line one two three second line one two three third line one two three fourth line one two three fifth line one two three anna civic kayak level madam mom noon";
         assertEquals(result, filePartReader.read());
     }
 
@@ -50,7 +50,7 @@ class FilePartReaderTest {
 
     @Test
     public void readNonExistingLinesFromToTest() throws IOException {
-        filePartReader.setup("./resources/test.txt", 6, 8);
+        filePartReader.setup("./resources/test.txt", 10, 22);
         String result = "These lines does not exist in the file";
         assertEquals(result, filePartReader.readLines());
     }
@@ -58,7 +58,7 @@ class FilePartReaderTest {
     @Test
     public void readLinesValidFromAndInvalidToTest() throws IOException {
         filePartReader.setup("./resources/test.txt", 4, 100);
-        String result = "fourth line one two three fifth line one two three";
+        String result = "fourth line one two three fifth line one two three anna civic kayak level madam mom noon";
         assertEquals(result, filePartReader.readLines());
     }
 

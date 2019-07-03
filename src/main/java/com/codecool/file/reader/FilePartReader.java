@@ -28,7 +28,7 @@ public class FilePartReader {
     public String read() throws IOException {
         Path path = Paths.get(filePath);
         String rawString = Files.readAllLines(path, StandardCharsets.UTF_8).toString();
-        return rawString.replace("[", "").replace("]", "").replace(",", "");
+        return rawString.replace("[", "").replace("]", "").replace(",", "").toLowerCase();
 
     }
 
@@ -51,7 +51,7 @@ public class FilePartReader {
         }
         if (fromLine > counter + minusOneToStartWithTheCorrectLine && toLine > counter + minusOneToStartWithTheCorrectLine)
             return "These lines does not exist in the file";
-        return scannedLines.toString();
+        return scannedLines.toString().toLowerCase();
 
     }
 
